@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /magic8ball-0.1
+  - source: /
     destination: /opt
 hooks:
   AfterInstall:
