@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd /opt/magic8ball-0.1
+/user/bin/python ./get-pip.py
+pip install virtualenv
+./virtualenv flask
+./flask/bin/pip install flask

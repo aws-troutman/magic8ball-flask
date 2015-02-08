@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+files:
+  - source: /magic8ball-0.1
+    destination: /opt
+hooks:
+  AfterInstall:
+    - location: scripts/install_dependencies
+      runas: root
+    - location: scripts/start_server
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_server
+      timeout: 300
+      runas: root
