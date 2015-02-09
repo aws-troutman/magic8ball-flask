@@ -1,4 +1,4 @@
 #!/bin/bash
 
 #kill off any older instances of magic8ball...
-pkill -f magic8ball
+pkill -f magic8ball || true

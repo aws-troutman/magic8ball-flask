@@ -4,13 +4,18 @@ files:
   - source: /
     destination: /opt
 hooks:
-  AfterInstall:
-    - location: scripts/install_dependencies
-      runas: root
-    - location: scripts/start_server
-      timeout: 300
-      runas: root
   ApplicationStop:
+    - location: scripts/deregister_from_elb.sh
     - location: scripts/stop_server
       timeout: 300
-      runas: root
+#      runas: root
+
+  AfterInstall:
+    - location: scripts/install_dependencies
+#      runas: root
+    - location: scripts/start_server
+      timeout: 300
+#      runas: root
+
+  ApplicationStart:
+    - location: scripts/register_with_elb.sh
