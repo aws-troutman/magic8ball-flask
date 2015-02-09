@@ -27,7 +27,7 @@ def index():
         'My sources say no',
         'Outlook not so good',
         'Very doubtful'];
-    return '<h1> Hello from Github:' + random.choice(responses) + '</h1>'
+    return '<h1> Hello from Github2:' + random.choice(responses) + '</h1>'
 
 if __name__ == '__main__':
     app.run('0.0.0.0', 5000) #debug=True)
