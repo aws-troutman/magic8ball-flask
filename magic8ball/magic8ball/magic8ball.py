@@ -29,7 +29,7 @@ def index():
         'Outlook not so good',
         'Very doubtful'];
     return '<h1> Hello Github! Instance '+boto.utils.get_instance_metadata()['instance-id'] + \
-           ' thinks that: ' + random.choice(responses) + '</h1>'
+           ' Predicts: ' + random.choice(responses) + '</h1>'
 
 if __name__ == '__main__':
     app.run('0.0.0.0', 5000) #debug=True)
