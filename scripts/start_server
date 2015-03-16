@@ -1,6 +1,9 @@
 #!/bin/bash
 
+#enable magic8ball
 a2ensite magic8ball
+#disable default config
+a2dissite 000-default
 service apache2 restart
 
 #set -m
