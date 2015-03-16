@@ -19,5 +19,5 @@ hooks:
     - location: scripts/start_server
       timeout: 300
 
-  ApplicationStart:
-    - location: scripts/register_with_elb.sh
+#  ApplicationStart:
+#    - location: scripts/register_with_elb.sh

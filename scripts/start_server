@@ -1,6 +1,6 @@
 #!/bin/bash
 
-a2ensite FlaskApp
+a2ensite magic8ball
 service apache2 restart
 
 #set -m
