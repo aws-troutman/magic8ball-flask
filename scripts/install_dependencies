@@ -1,8 +1,7 @@
 #!/bin/bash
 
-cd /opt/magic8ball-0.1
-/usr/bin/python ./get-pip.py
-pip install virtualenv
-virtualenv flask
-./flask/bin/pip install flask
-./flask/bin/pip install boto
+sudo apt-get -q -y install apache2
+sudo apt-get -q -y install libapache2-mod-wsgi
+sudo apt-get -q -y install python-dev
+a2enmod wsgi
+

@@ -1,5 +1,8 @@
 #!/bin/bash
 
-set -m
-cd /opt/magic8ball-0.1/
-nohup ./magic8ball.py > /dev/null 2>&1 &
+a2ensite FlaskApp
+service apache2 restart
+
+#set -m
+#cd /opt/magic8ball-0.1/
+#nohup ./magic8ball.py > /dev/null 2>&1 &

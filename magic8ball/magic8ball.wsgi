@@ -1,0 +1,1 @@
+from magic8ball import app as application

@@ -1,21 +1,23 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /opt
+  - source: /magic8ball
+    destination: /var/www/magic8ball
+  - source: /magic8ball.conf
+    destination: /etc/apache2/sites-available
 hooks:
   ApplicationStop:
     - location: scripts/deregister_from_elb.sh
     - location: scripts/stop_server
       timeout: 300
-#      runas: root
+
+  BeforeInstall:
+    - location: scripts/install_dependencies
 
   AfterInstall:
-    - location: scripts/install_dependencies
-#      runas: root
+    - location: scripts/setup_virtualenv
     - location: scripts/start_server
       timeout: 300
-#      runas: root
 
   ApplicationStart:
     - location: scripts/register_with_elb.sh
