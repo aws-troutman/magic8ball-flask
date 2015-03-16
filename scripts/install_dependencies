@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo apt-get -q -y install apache2
-sudo apt-get -q -y install libapache2-mod-wsgi
-sudo apt-get -q -y install python-dev
+apt-get -q -y install apache2
+apt-get -q -y install libapache2-mod-wsgi
+apt-get -q -y install python-dev
 a2enmod wsgi
 
