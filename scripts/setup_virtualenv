@@ -3,7 +3,7 @@
 cd /var/www/magic8ball/magic8ball
 /usr/bin/python ./get-pip.py
 pip install virtualenv
-virtualenv flask
-source ./flask/bin/activate
-./flask/bin/pip install flask
-./flask/bin/pip install boto
+virtualenv venv
+source ./venv/bin/activate
+pip install flask
+pip install boto
