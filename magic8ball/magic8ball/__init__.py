@@ -2,6 +2,8 @@ from flask import Flask, render_template, jsonify, request
 from flask_bootstrap import Bootstrap
 import random
 import boto.utils
+import boto.regioninfo
+import boto.ec2
 
 app = Flask(__name__)
 Bootstrap(app)
@@ -30,6 +32,20 @@ def get_fortune():
     'Very doubtful'];
 
   return random.choice(responses)
+
+def get_lb_state(instance_id):
+  state = nill
+  elb_region = boto.regioninfo.RegionInfo(
+      name='us-west-2', 
+      endpoint='elasticloadbalancing.us-west-2.amazonaws.com')
+
+  elb_connection = boto.connect_elb(region=elb_region)
+  #load_balancer = elb_connection.get_all_load_balancers(load_balancer_names=[])[0]
+  state = load_balancer.describe_instance_health('magic-eight-ball-python')
+  return_value = {}
+  for instance in state:
+    return_value[instance.instance_id] = instance.state
+  return return_value
 
 @app.route('/_get_new_fortune')
 def get_new_fortune():
