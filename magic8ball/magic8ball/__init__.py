@@ -33,6 +33,7 @@ def get_fortune():
 
   return random.choice(responses)
 
+@app.route('/_get_lb_info')
 def get_lb_state(instance_id):
   state = nill
   elb_region = boto.regioninfo.RegionInfo(
