@@ -31,7 +31,6 @@
 <body>
 
     <!-- Navigation -->
-    {% block navbar %}
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -62,7 +61,6 @@
         </div>
         <!-- /.container -->
     </nav>
-    {% endblock %}
 
     <!-- Page Content -->
     {% block content %}
@@ -71,8 +69,8 @@
         <!-- Portfolio Item Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Portfolio Item
-                    <small>Item Subheading</small>
+	        <h1 class="page-header">Hellow AWS Sumit!
+                    <small>from humble instance {{instance_id}} </small>
                 </h1>
             </div>
         </div>
@@ -81,7 +79,7 @@
         <!-- Portfolio Item Row -->
         <div class="row">
 
-            <div class="col-md-8">
+            <div class="col-md-8" id="main-prediction">
 	      <h1> Hello AWS! Instance {{instance_id}} Predicts: {{random_choice}} </h1>
             </div>
 
@@ -155,6 +153,21 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- auto-refresh our JavaScript -->
+    <script type=text/javascript>
+      $SCRIPT_ROOT = 'http://magic-eight-ball-python-996710794.us-west-2.elb.amazonaws.com';
+      $(function() {
+        $(setInterval(function() {
+            $.getJSON($SCRIPT_ROOT + '/_get_new_fortune', , function(data) {
+              $("#main-prediction").html("<h1> Hello AWS! Instance" + data.results[1] + " Predicts: " 
+                + data.result[0] + "</h1>");
+            });
+          }, 3000);
+        )
+      });
+</script>
+
 
 </body>
 
