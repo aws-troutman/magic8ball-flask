@@ -168,9 +168,9 @@
       $(function() {
         $(setInterval(function() {
             $.getJSON($SCRIPT_ROOT + '/_get_lb_info', function(data) {
-              $("#lb-state-1").hide().html("<h1>" + data.i-041ced0b + "</h1>").fadeIn('slow');
-              $("#lb-state-2").hide().html("<h1>" + data.i-2c30f921 + "</h1>").fadeIn('slow');
-              $("#lb-state-3").hide().html("<h1>" + data.i-e5dfb62c + "</h1>").fadeIn('slow');
+              $("#lb-state-1").hide().html("<h1>" + data."i-041ced0b" + "</h1>").fadeIn('slow');
+              $("#lb-state-2").hide().html("<h1>" + data."i-2c30f921" + "</h1>").fadeIn('slow');
+              $("#lb-state-3").hide().html("<h1>" + data."i-e5dfb62c" + "</h1>").fadeIn('slow');
             });
           }, 3000)
         )
