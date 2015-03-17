@@ -106,21 +106,12 @@
             </div>
 
             <div class="col-sm-3 col-xs-6" id="lb-state-1">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-                </a>
             </div>
 
             <div class="col-sm-3 col-xs-6" id="lb-state-2">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-                </a>
             </div>
 
             <div class="col-sm-3 col-xs-6" id="lb-state-3">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-                </a>
             </div>
 
             <div class="col-sm-3 col-xs-6">
@@ -162,10 +153,10 @@
       $(function() {
         $(setInterval(function() {
             $.getJSON($SCRIPT_ROOT + '/_get_new_fortune', function(data) {
-              $("#main-prediction").hide().html("<h1> Hello AWS! Instance" + data.instance_id 
+              $("#main-prediction").hide().html("<h1> Hello AWS! Instance " + data.instance_id 
                 + " Predicts: " + data.random_choice + "</h1>").fadeIn('slow');
               $("#header-div").hide().html("<h1 class=\"page-header\">Hellow AWS Sumit!"
-                + "<small>from humble instance" + data.instance_id + " </small>").fadeIn('slow');
+                + "<small> from humble instance " + data.instance_id + " </small>").fadeIn('slow');
             });
           }, 3000)
         )
@@ -178,9 +169,9 @@
       $(function() {
         $(setInterval(function() {
             $.getJSON($SCRIPT_ROOT + '/_get_lb_info', function(data) {
-              $("#lb-state-1").hide().html("</h1>"data.i-041ced0b + "</h1>").fadeIn('slow');
-              $("#lb-state-2").hide().html("</h1>"data.i-2c30f921 + "</h1>").fadeIn('slow');
-              $("#lb-state-3").hide().html("</h1>"data.i-e5dfb62c + "</h1>").fadeIn('slow');
+              $("#lb-state-1").hide().html("</h1>" + data.i-041ced0b + "</h1>").fadeIn('slow');
+              $("#lb-state-2").hide().html("</h1>" + data.i-2c30f921 + "</h1>").fadeIn('slow');
+              $("#lb-state-3").hide().html("</h1>" + data.i-e5dfb62c + "</h1>").fadeIn('slow');
             });
           }, 3000)
         )
