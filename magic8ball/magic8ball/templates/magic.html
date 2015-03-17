@@ -155,6 +155,8 @@
     <script src="js/bootstrap.min.js"></script>
 
     <!-- auto-refresh our JavaScript -->
+    {% block scripts %}
+    {{super()}}
     <script type=text/javascript>
       $SCRIPT_ROOT = 'http://magic-eight-ball-python-996710794.us-west-2.elb.amazonaws.com';
       $(function() {
@@ -167,7 +169,7 @@
         )
       });
     </script>
-
+    {% endblock %}
 
 </body>
 
