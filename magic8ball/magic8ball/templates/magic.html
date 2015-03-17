@@ -162,8 +162,8 @@
       $(function() {
         $(setInterval(function() {
             $.getJSON($SCRIPT_ROOT + '/_get_new_fortune', function(data) {
-              $("#main-prediction").html("<h1> Hello AWS! Instance" + data.results[1] + " Predicts: " 
-                + data.result[0] + "</h1>");
+              $("#main-prediction").html("<h1> Hello AWS! Instance" + data.instance_id + " Predicts: " 
+                + data.random_choice + "</h1>");
             });
           }, 3000);
         )

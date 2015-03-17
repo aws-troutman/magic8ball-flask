@@ -35,8 +35,7 @@ def get_fortune():
 def get_new_fortune():
   random_choice = get_fortune()
   instance_id = boto.utils.get_instance_metadata()['instance-id']
-    
-  return jsonify([random_choice, instance_id])
+  return jsonify({('random_choice',random_choice),('instance_id',instance_id)})  
 
 @app.route('/magic')
 def index():
