@@ -6,7 +6,7 @@ import boto.utils
 app = Flask(__name__)
 Bootstrap(app)
 
-def get_fortunte():
+def get_fortune():
   responses = [
     'It is certain',
     'It is decidedly so',
