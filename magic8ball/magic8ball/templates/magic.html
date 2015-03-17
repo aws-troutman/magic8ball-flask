@@ -167,17 +167,17 @@
     <!-- auto-refresh lb state -->
     <script type=text/javascript>
       $(function() {
-        previous-sate-1 = 'InService';
-        previous-sate-2 = 'InService';
-        previous-sate-3 = 'InService';
+        previousState1 = "InService";
+        previousState2 = "InService";
+        previousState3 = "InService";
       });
 
       $SCRIPT_ROOT = 'http://magic-eight-ball-python-996710794.us-west-2.elb.amazonaws.com';
       $(function() {
         $(setInterval(function() {
             $.getJSON($SCRIPT_ROOT + '/_get_lb_info', function(data) {
-              if(data['i-041ced0b'] != undefined && data['i-041ced0b'] != previous-sate-1) {
-                previous-sate-1 = data['i-041ced0b'];
+              if(data['i-041ced0b'] != undefined && data['i-041ced0b'] != previousState1) {
+                previousState1 = data['i-041ced0b'];
                 if(data == 'OutOfService') {
                   $("#lb-state-1").css("background-color","LightPink");
                 } else {
@@ -185,8 +185,8 @@
                 }
                 $("#lb-state-1").hide().html("<h1>" + data['i-041ced0b'] + "</h1>").fadeIn('slow');
               }
-              if(data['i-2c30f921'] != undefined && data['i-2c30f921'] != previous-sate-2) {
-                previous-sate-2 = data['i-2c30f921'];
+              if(data['i-2c30f921'] != undefined && data['i-2c30f921'] != previousState2) {
+                previousState2 = data['i-2c30f921'];
                 if(data == 'OutOfService') {
                   $("#lb-state-2").css("background-color","LightPink");
                 } else {
@@ -194,8 +194,8 @@
                 }
                 $("#lb-state-2").hide().html("<h1>" + data['i-2c30f921'] + "</h1>").fadeIn('slow');
               }
-              if(data['i-e5dfb62c'] != undefined && data['i-e5dfb62c'] != previous-sate-3) {
-                previous-sate-3 = data['i-e5dfb62c'];
+              if(data['i-e5dfb62c'] != undefined && data['i-e5dfb62c'] != previousState3) {
+                previousState3 = data['i-e5dfb62c'];
                 if(data == 'OutOfService') {
                   $("#lb-state-3").css("background-color","LightPink");
                 }else {
