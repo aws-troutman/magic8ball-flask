@@ -105,15 +105,15 @@
                 <h3 class="page-header">LB State of Instances</h3>
             </div>
 
-            <div class="col-sm-3 col-xs-6" id="lb-state-1">
+            <div class="col-sm-3 col-xs-6" id="lb-state-1" style="background-color:LightGreen;">
               <h1>InService</h1>
             </div>
 
-            <div class="col-sm-3 col-xs-6" id="lb-state-2">
+            <div class="col-sm-3 col-xs-6" id="lb-state-2" style="background-color:LightGreen;">
               <h1>InService</h1>
             </div>
 
-            <div class="col-sm-3 col-xs-6" id="lb-state-3">
+            <div class="col-sm-3 col-xs-6" id="lb-state-3" style="background-color:LightGreen;">
               <h1>InService</h1>
             </div>
 
@@ -178,7 +178,7 @@
             $.getJSON($SCRIPT_ROOT + '/_get_lb_info', function(data) {
               if(data['i-041ced0b'] != undefined && data['i-041ced0b'] != previousState1) {
                 previousState1 = data['i-041ced0b'];
-                if(data == 'OutOfService') {
+                if(data['i-041ced0b'] == 'OutOfService') {
                   $("#lb-state-1").css("background-color","LightPink");
                 } else {
                   $("#lb-state-1").css("background-color","LightGreen"); 
@@ -187,7 +187,7 @@
               }
               if(data['i-2c30f921'] != undefined && data['i-2c30f921'] != previousState2) {
                 previousState2 = data['i-2c30f921'];
-                if(data == 'OutOfService') {
+                if(data['i-2c30f921'] == 'OutOfService') {
                   $("#lb-state-2").css("background-color","LightPink");
                 } else {
                   $("#lb-state-2").css("background-color","LightGreen"); 
@@ -196,7 +196,7 @@
               }
               if(data['i-e5dfb62c'] != undefined && data['i-e5dfb62c'] != previousState3) {
                 previousState3 = data['i-e5dfb62c'];
-                if(data == 'OutOfService') {
+                if(data['i-e5dfb62c'] == 'OutOfService') {
                   $("#lb-state-3").css("background-color","LightPink");
                 }else {
                   $("#lb-state-3").css("background-color","LightGreen");
