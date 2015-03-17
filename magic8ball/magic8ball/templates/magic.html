@@ -68,9 +68,9 @@
 
         <!-- Portfolio Item Heading -->
         <div class="row">
-            <div class="col-lg-12" id="header-div">
+            <div class="col-lg-12">
 	        <h1 class="page-header">Hellow AWS Sumit!
-                    <small>from humble instance {{instance_id}} </small>
+                    <small>from humble instance <span id="header-div">{{instance_id}} </span></small>
                 </h1>
             </div>
         </div>
@@ -154,10 +154,9 @@
         $(setInterval(function() {
             $.getJSON($SCRIPT_ROOT + '/_get_new_fortune', function(data) {
               $("#main-prediction").hide().html("<h1>" + data.random_choice + "</h1>").fadeIn('slow');
-              $("#header-div").hide().html("<h1 class=\"page-header\">Hellow AWS Sumit!"
-                + "<small> from humble instance <mark>" + data.instance_id + "</mark> </small>").fadeIn('slow');
+              $("#header-div").hide().html(data.instance_id).fadeIn('slow');
             });
-          }, 3000)
+          }, 5000)
         )
       });
     </script>
@@ -168,9 +167,15 @@
       $(function() {
         $(setInterval(function() {
             $.getJSON($SCRIPT_ROOT + '/_get_lb_info', function(data) {
-              $("#lb-state-1").hide().html("<h1>" + data['i-041ced0b'] + "</h1>").fadeIn('slow');
-              $("#lb-state-2").hide().html("<h1>" + data['i-2c30f921'] + "</h1>").fadeIn('slow');
-              $("#lb-state-3").hide().html("<h1>" + data['i-e5dfb62c'] + "</h1>").fadeIn('slow');
+              if(data['i-041ced0b'] != undefined) {
+                $("#lb-state-1").hide().html("<h1>" + data['i-041ced0b'] + "</h1>").fadeIn('slow');
+              }
+              if(data['i-2c30f921'] != undefined) {
+                $("#lb-state-2").hide().html("<h1>" + data['i-2c30f921'] + "</h1>").fadeIn('slow');
+              }
+              if(data['i-e5dfb62c'] != undefined) {
+                $("#lb-state-3").hide().html("<h1>" + data['i-e5dfb62c'] + "</h1>").fadeIn('slow');
+              }
             });
           }, 3000)
         )
