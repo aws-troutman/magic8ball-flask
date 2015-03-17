@@ -176,7 +176,7 @@
                 } else {
                   $("#lb-state-1").css("background-color","LightGreen"); 
                 }
-                $("#lb-state-1").hide().html("<h1>" + data['i-041ced0b'] + "</h1>").fadeIn('slow');
+                $("#lb-state-1").hide().html("<h1>i-041ced0b: " + data['i-041ced0b'] + "</h1>").fadeIn('slow');
               }
               if(data['i-2c30f921'] != undefined && data['i-2c30f921'] != previousState2) {
                 previousState2 = data['i-2c30f921'];
@@ -185,7 +185,7 @@
                 } else {
                   $("#lb-state-2").css("background-color","LightGreen"); 
                 }
-                $("#lb-state-2").hide().html("<h1>" + data['i-2c30f921'] + "</h1>").fadeIn('slow');
+                $("#lb-state-2").hide().html("<h1>i-2c30f921: " + data['i-2c30f921'] + "</h1>").fadeIn('slow');
               }
               if(data['i-e5dfb62c'] != undefined && data['i-e5dfb62c'] != previousState3) {
                 previousState3 = data['i-e5dfb62c'];
@@ -195,7 +195,7 @@
                   $("#lb-state-3").css("background-color","LightGreen");
                 }
 
-                $("#lb-state-3").hide().html("<h1>" + data['i-e5dfb62c'] + "</h1>").fadeIn('slow');
+                $("#lb-state-3").hide().html("<h1>i-e5dfb62c: " + data['i-e5dfb62c'] + "</h1>").fadeIn('slow');
               }
             });
           }, 3000)
