@@ -29,7 +29,7 @@ def get-fortunte
     'Outlook not so good',
     'Very doubtful'];
 
-  return random.choice(responses)
+    return random.choice(responses)
 
 @app.route('/_get_new_fortune')
 def get-new-fortune():
@@ -40,10 +40,10 @@ def get-new-fortune():
 
 @app.route('/magic')
 def index():
-  instance_id = boto.utils.get_instance_metadata()['instance-id']
-  random_choice = get-fortune()
-  
-  return render_template('magic.html', instance_id=instance_id, random_choice=random_choice)
+    instance_id = boto.utils.get_instance_metadata()['instance-id']
+    random_choice = get-fortune()
+
+    return render_template('magic.html', instance_id=instance_id, random_choice=random_choice)
 
 if __name__ == '__main__':
     app.run() #'0.0.0.0', 5000 debug=True)
