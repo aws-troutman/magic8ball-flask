@@ -70,7 +70,7 @@
         <div class="row">
             <div class="col-lg-12">
 	        <h1 class="page-header">Hellow AWS Sumit!
-                    <small>from humble instance <span id="header-div">{{instance_id}} </span></small>
+                    <small>from humble instance <mark><span id="header-div">{{instance_id}} </span></mark></small>
                 </h1>
             </div>
         </div>
@@ -106,12 +106,15 @@
             </div>
 
             <div class="col-sm-3 col-xs-6" id="lb-state-1">
+              <h1>InService</h1>
             </div>
 
             <div class="col-sm-3 col-xs-6" id="lb-state-2">
+              <h1>InService</h1>
             </div>
 
             <div class="col-sm-3 col-xs-6" id="lb-state-3">
+              <h1>InService</h1>
             </div>
 
             <div class="col-sm-3 col-xs-6">
@@ -168,17 +171,39 @@
         $(setInterval(function() {
             $.getJSON($SCRIPT_ROOT + '/_get_lb_info', function(data) {
               if(data['i-041ced0b'] != undefined) {
+                if(data == 'OutOfService') {
+                  $("#lb-state-1").css("background-color","LightPink");
+                }
                 $("#lb-state-1").hide().html("<h1>" + data['i-041ced0b'] + "</h1>").fadeIn('slow');
               }
-              if(data['i-2c30f921'] != undefined) {
+              if(data['i-2c30f921'] != undefined && data['i-2c30f921'] != previous-sate-1) {
+                previous-sate-1 = data['i-2c30f921'];
+                if(data == 'OutOfService') {
+                  $("#lb-state-2").css("background-color","LightPink");
+                } else {
+                  $("#lb-state-2").css("background-color","LightGreen"); 
+                }
                 $("#lb-state-2").hide().html("<h1>" + data['i-2c30f921'] + "</h1>").fadeIn('slow');
               }
-              if(data['i-e5dfb62c'] != undefined) {
+              if(data['i-e5dfb62c'] != undefined && data['i-e5dfb62c'] != previous-sate-2) {
+                previous-sate-1 = data['i-e5dfb62c'];
+                if(data == 'OutOfService') {
+                  $("#lb-state-3").css("background-color","LightPink");
+                }else {
+                  $("#lb-state-3").css("background-color","LightGreen");
+                }
+
                 $("#lb-state-3").hide().html("<h1>" + data['i-e5dfb62c'] + "</h1>").fadeIn('slow');
               }
             });
           }, 3000)
         )
+      });
+
+      $(function {
+        previous-sate-1 = 'InService';
+        previous-sate-2 = 'InService';
+        previous-sate-3 = 'InService';
       });
     </script>
     {% endblock %}
