@@ -105,19 +105,19 @@
                 <h3 class="page-header">Related Projects</h3>
             </div>
 
-            <div class="col-sm-3 col-xs-6">
+            <div class="col-sm-3 col-xs-6" id="lb-state-1">
                 <a href="#">
                     <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
                 </a>
             </div>
 
-            <div class="col-sm-3 col-xs-6">
+            <div class="col-sm-3 col-xs-6" id="lb-state-2">
                 <a href="#">
                     <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
                 </a>
             </div>
 
-            <div class="col-sm-3 col-xs-6">
+            <div class="col-sm-3 col-xs-6" id="lb-state-3">
                 <a href="#">
                     <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
                 </a>
@@ -154,7 +154,7 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- auto-refresh our JavaScript -->
+    <!-- auto-refresh our prediciton -->
     {% block scripts %}
     {{super()}}
     <script type=text/javascript>
@@ -166,6 +166,21 @@
                 + " Predicts: " + data.random_choice + "</h1>").fadeIn('slow');
               $("#header-div").hide().html("<h1 class=\"page-header\">Hellow AWS Sumit!"
                 + "<small>from humble instance" + data.instance_id + " </small>").fadeIn('slow');
+            });
+          }, 3000)
+        )
+      });
+    </script>
+
+    <!-- auto-refresh lb state -->
+    <script type=text/javascript>
+      $SCRIPT_ROOT = 'http://magic-eight-ball-python-996710794.us-west-2.elb.amazonaws.com';
+      $(function() {
+        $(setInterval(function() {
+            $.getJSON($SCRIPT_ROOT + '/_get_lb_info', function(data) {
+              $("#lb-state-1").hide().html("</h1>"data.i-041ced0b + "</h1>").fadeIn('slow');
+              $("#lb-state-2").hide().html("</h1>"data.i-2c30f921 + "</h1>").fadeIn('slow');
+              $("#lb-state-3").hide().html("</h1>"data.i-e5dfb62c + "</h1>").fadeIn('slow');
             });
           }, 3000)
         )
