@@ -68,7 +68,7 @@
 
         <!-- Portfolio Item Heading -->
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12" id="header-div">
 	        <h1 class="page-header">Hellow AWS Sumit!
                     <small>from humble instance {{instance_id}} </small>
                 </h1>
@@ -162,8 +162,10 @@
       $(function() {
         $(setInterval(function() {
             $.getJSON($SCRIPT_ROOT + '/_get_new_fortune', function(data) {
-              $("#main-prediction").html("<h1> Hello AWS! Instance" + data.instance_id + " Predicts: " 
-                + data.random_choice + "</h1>");
+              $("#main-prediction").hide().html("<h1> Hello AWS! Instance" + data.instance_id 
+                + " Predicts: " + data.random_choice + "</h1>").fadeIn('slow');
+              $("#header-div").hide().html("<h1 class=\"page-header\">Hellow AWS Sumit!"
+                + "<small>from humble instance" + data.instance_id + " </small>").fadeIn('slow');
             });
           }, 3000)
         )
