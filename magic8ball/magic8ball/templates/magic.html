@@ -169,14 +169,14 @@
       $(function() {
         $(setInterval(function() {
             $.getJSON($SCRIPT_ROOT + '/_get_lb_info', function(data) {
-              if(data['i-041ced0b'] != undefined && data['i-041ced0b'] != previousState1) {
-                previousState1 = data['i-041ced0b'];
-                if(data['i-041ced0b'] == 'OutOfService') {
+              if(data['i-86469870'] != undefined && data['i-86469870'] != previousState1) {
+                previousState1 = data['i-86469870'];
+                if(data['i-86469870'] == 'OutOfService') {
                   $("#lb-state-1").css("background-color","LightPink");
                 } else {
                   $("#lb-state-1").css("background-color","LightGreen"); 
                 }
-                $("#lb-state-1").hide().html("<h1>i-041ced0b: " + data['i-041ced0b'] + "</h1>").fadeIn('slow');
+                $("#lb-state-1").hide().html("<h1>i-86469870: " + data['i-86469870'] + "</h1>").fadeIn('slow');
               }
               if(data['i-2c30f921'] != undefined && data['i-2c30f921'] != previousState2) {
                 previousState2 = data['i-2c30f921'];
