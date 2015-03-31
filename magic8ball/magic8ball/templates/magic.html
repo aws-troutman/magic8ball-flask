@@ -77,19 +77,19 @@
         <!-- /.row -->
 
         <!-- Portfolio Item Row -->
-        <div class="row">
+	<div class="row">
+          <div class="col-md-4">
+	    <img src="https://s3-us-west-2.amazonaws.com/magic-8ball/Magic8ball.jpg">
+          </div>
 
+        </div>
+        <div class="row">
             <div class="col-md-8">
 	      <span class="center-block" id="main-prediction">
 		<h1 style="font-size:300%">"{{random_choice}}"</h1>
 	      </span>
             </div>
-
-            <div class="col-md-4">
-	      <img src="https://s3-us-west-2.amazonaws.com/magic-8ball/Magic8ball.jpg">
-            </div>
-
-        </div>
+	</div>
         <!-- /.row -->
 
         <!-- Related Projects Row -->
@@ -143,7 +143,7 @@
       $(function() {
         $(setInterval(function() {
             $.getJSON($SCRIPT_ROOT + '/_get_new_fortune', function(data) {
-              $("#main-prediction").hide().html("<h1>\"" + data.random_choice + "\"</h1>").fadeIn('slow');
+              $("#main-prediction").hide().html("<h1 style=\"font-size:300%\">\"" + data.random_choice + "\"</h1>").fadeIn('slow');
               $("#header-div").hide().html(data.instance_id).fadeIn('slow');
             });
           }, 5000)
