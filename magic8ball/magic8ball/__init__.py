@@ -59,7 +59,7 @@ def get_new_fortune():
 
 @app.route('/_get_title')
 def get_new_title():
-  return jsonify({('title',get_title())})
+  return jsonify({'title': get_title()})
 
 @app.route('/magic')
 def index():
