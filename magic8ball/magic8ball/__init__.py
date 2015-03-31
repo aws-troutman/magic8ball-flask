@@ -8,6 +8,7 @@ import boto.ec2
 app = Flask(__name__)
 Bootstrap(app)
 
+@app.route('/_get_title')
 def get_title():
   return 'Hello World.'
 

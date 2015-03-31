@@ -80,11 +80,13 @@
         <div class="row">
 
             <div class="col-md-8" id="main-prediction">
-	      <h1 style="font-size:300%"> {{random_choice}} </h1>
+	      <div class="center-block">
+		<h1 style="font-size:300%">"{{random_choice}}" </h1>
+	      </div>
             </div>
 
             <div class="col-md-4">
-	      <img src="./images/Magic8ball.jpg">
+	      <img src="images/Magic8ball.jpg">
             </div>
 
         </div>
@@ -117,7 +119,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; AWS 2015</p>
                 </div>
             </div>
             <!-- /.row -->
@@ -150,7 +152,7 @@
 
       $(function() {
         $(setInterval(function() {
-            $.getJSON($SCRIPT_ROOT + '/get_title', function(data) {
+            $.getJSON($SCRIPT_ROOT + '/_get_title', function(data) {
               $("#page-title").hide().html(data).fadeIn('slow');
             });
           }, 5000)
