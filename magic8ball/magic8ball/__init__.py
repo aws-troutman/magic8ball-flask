@@ -10,7 +10,7 @@ Bootstrap(app)
 
 @app.route('/_get_title')
 def get_title():
-  return 'Hello World.'
+  return jsonify('Hello World.')
 
 def get_fortune():
   responses = [
