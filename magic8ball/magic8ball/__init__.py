@@ -8,6 +8,9 @@ import boto.ec2
 app = Flask(__name__)
 Bootstrap(app)
 
+def get_title():
+  return 'Hello World.'
+
 def get_fortune():
   responses = [
     'Hello Summit!',

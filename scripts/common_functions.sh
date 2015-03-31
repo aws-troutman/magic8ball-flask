@@ -25,7 +25,7 @@ export PATH="$PATH:/usr/bin:/usr/local/bin"
 DEBUG=true
 
 # Number of times to check for a resouce to be in the desired state.
-WAITER_ATTEMPTS=60
+WAITER_ATTEMPTS=200
 
 # Number of seconds to wait between attempts for resource to be in a state.
 WAITER_INTERVAL=1
@@ -214,8 +214,10 @@ reset_waiter_timeout() {
         --query 'LoadBalancerDescriptions[0].HealthCheck.[HealthyThreshold, Interval]' \
         --output text)
 
-    WAITER_ATTEMPTS=$(echo $health_check_values | awk '{print $1}')
-    WAITER_INTERVAL=$(echo $health_check_values | awk '{print $2}')
+    WAITER_ATTEMPTS=200
+    #$(echo $health_check_values | awk '{print $1}')
+    WAITER_INTERVAL=1
+    #$(echo $health_check_values | awk '{print $2}')
 }
 
 # Usage: wait_for_state <service> <EC2 instance ID> <state name> [ELB name]

@@ -69,7 +69,7 @@
         <!-- Portfolio Item Heading -->
         <div class="row">
             <div class="col-lg-12">
-	        <h1 class="page-header">Hello SF Summit! 
+	        <h1 class="page-header"><span id="page-title"></span> 
                     <small>from humble instance <mark><span id="header-div">{{instance_id}} </span></mark></small>
                 </h1>
             </div>
@@ -84,15 +84,7 @@
             </div>
 
             <div class="col-md-4">
-                <h3>Project Description</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-                <h3>Project Details</h3>
-                <ul>
-                    <li>Lorem Ipsum</li>
-                    <li>Dolor Sit Amet</li>
-                    <li>Consectetur</li>
-                    <li>Adipiscing Elit</li>
-                </ul>
+	      <img src="./images/Magic8ball.jpg">
             </div>
 
         </div>
@@ -151,6 +143,15 @@
             $.getJSON($SCRIPT_ROOT + '/_get_new_fortune', function(data) {
               $("#main-prediction").hide().html("<h1>" + data.random_choice + "</h1>").fadeIn('slow');
               $("#header-div").hide().html(data.instance_id).fadeIn('slow');
+            });
+          }, 5000)
+        )
+      });
+
+      $(function() {
+        $(setInterval(function() {
+            $.getJSON($SCRIPT_ROOT + '/get_title', function(data) {
+              $("#page-title").hide().html(data).fadeIn('slow');
             });
           }, 5000)
         )
