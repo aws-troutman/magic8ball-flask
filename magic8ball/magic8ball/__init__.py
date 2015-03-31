@@ -8,9 +8,9 @@ import boto.ec2
 app = Flask(__name__)
 Bootstrap(app)
 
-@app.route('/_get_title')
+
 def get_title():
-  return jsonify('Hello World.')
+  'hello world.'
 
 def get_fortune():
   responses = [
@@ -56,6 +56,10 @@ def get_new_fortune():
   random_choice = get_fortune()
   instance_id = boto.utils.get_instance_metadata()['instance-id']
   return jsonify({('random_choice',random_choice),('instance_id',instance_id)})  
+
+@app.route('/_get_title')
+def get_new_title():
+  return jsonify({('title',get_title())})
 
 @app.route('/magic')
 def index():
