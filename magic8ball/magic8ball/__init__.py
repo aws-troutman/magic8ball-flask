@@ -10,7 +10,7 @@ Bootstrap(app)
 
 
 def get_title():
-  return 'hello world Summit'
+  return 'hello world!'
 
 def get_fortune():
   responses = [
