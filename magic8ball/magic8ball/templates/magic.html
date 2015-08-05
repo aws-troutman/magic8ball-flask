@@ -190,15 +190,15 @@
                 }
                 $("#lb-state-2").hide().html("<h1>i-2c30f921: " + data['i-2c30f921'] + "</h1>").fadeIn('slow');
               }
-              if(data['i-e5dfb62c'] != undefined && data['i-e5dfb62c'] != previousState3) {
-                previousState3 = data['i-e5dfb62c'];
-                if(data['i-e5dfb62c'] == 'OutOfService') {
+              if(data['i-914d2d59'] != undefined && data['i-914d2d59'] != previousState3) {
+                previousState3 = data['i-914d2d59'];
+                if(data['i-914d2d59'] == 'OutOfService') {
                   $("#lb-state-3").css("background-color","LightPink");
                 }else {
                   $("#lb-state-3").css("background-color","LightGreen");
                 }
 
-                $("#lb-state-3").hide().html("<h1>i-e5dfb62c: " + data['i-e5dfb62c'] + "</h1>").fadeIn('slow');
+                $("#lb-state-3").hide().html("<h1>i-914d2d59: " + data['i-914d2d59'] + "</h1>").fadeIn('slow');
               }
             });
           }, 3000)
